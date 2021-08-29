@@ -22,22 +22,22 @@ namespace CasaDoCodigo.Migrations
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("CasaDoCodigo.Models.Produto", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Codigo")
-                        .IsRequired();
+                b.Property<string>("Codigo")
+                    .IsRequired();
 
-                    b.Property<string>("Nome")
-                        .IsRequired();
+                b.Property<string>("Nome")
+                    .IsRequired();
 
-                    b.Property<decimal>("Preco");
+                b.Property<decimal>("Preco");
 
-                    b.HasKey("Id");
+                b.HasKey("Id");
 
-                    b.ToTable("Produto");
-                });
+                b.ToTable("Produto");
+            });
 #pragma warning restore 612, 618
         }
     }
