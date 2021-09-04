@@ -40,8 +40,9 @@ namespace CasaDoCodigo.Controllers
 
         public IActionResult Resumo()
         {
-            return View();
-        }
+            var pedido = pedidoRepository.GetPedido();
 
+            return View(pedido);
+        }
     }
 }
