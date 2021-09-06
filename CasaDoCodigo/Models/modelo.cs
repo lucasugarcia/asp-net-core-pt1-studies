@@ -91,6 +91,11 @@ namespace CasaDoCodigo.Models
             Quantidade = quantidade;
             PrecoUnitario = precoUnitario;
         }
+
+        internal void AtualizarQuantidade(int quantidade)
+        {
+            this.Quantidade = quantidade;
+        }
     }
 
     public class Pedido : BaseModel
