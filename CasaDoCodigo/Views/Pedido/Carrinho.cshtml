@@ -45,7 +45,7 @@
                         <input type="text" value="@(item.Quantidade)"
                                class="form-control text-center" />
                         <span class="input-group-btn">
-                            <button class="btn btn-default">
+                            <button class="btn btn-default" onclick="clickIncremento()">
                                 <span class="glyphicon-plus"></span>
                             </button>
                         </span>
@@ -88,3 +88,11 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script type="text/javascript">
+        function clickIncremento() {
+
+        }
+    </script>
+}  
