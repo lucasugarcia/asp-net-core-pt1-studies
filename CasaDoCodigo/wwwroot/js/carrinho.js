@@ -4,7 +4,7 @@
 
         data.Quantidade++;
 
-        this.postQuantidade(data);
+        this.postQuantidade(data, btn);
     }
 
     clickDecremento(btn) {
@@ -12,7 +12,7 @@
 
         data.Quantidade--;
 
-        this.postQuantidade(data);
+        this.postQuantidade(data, btn);
     }
 
     getData(elemento) {
@@ -26,13 +26,26 @@
         };
     }
 
-    postQuantidade(data) {
+    postQuantidade(data, elemento) {
+        this.updateValorInput(data.Quantidade, elemento);
+
         $.ajax({
             url: '/pedido/updatequantidade',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(data)
         });
+    }
+
+    updateQuantidade(input) {
+        let data = this.getData(input);
+
+        this.postQuantidade(data, input);
+    }
+
+    updateValorInput(quantidade, elemento) {
+        var linhaDoItem = $(elemento).parents('[item-id]');
+        $(linhaDoItem).find('input').val(quantidade);
     }
 }
 
