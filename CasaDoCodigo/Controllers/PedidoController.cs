@@ -43,13 +43,14 @@ namespace CasaDoCodigo.Controllers
         {
             var pedido = pedidoRepository.GetPedido();
 
-            if(pedido == null)
+            if (pedido == null)
                 return RedirectToAction("Carrossel");
 
             return View(pedido.Cadastro);
         }
 
-        public IActionResult Resumo()
+        [HttpPost]
+        public IActionResult Resumo(Cadastro cadastro)
         {
             var pedido = pedidoRepository.GetPedido();
 
@@ -57,7 +58,7 @@ namespace CasaDoCodigo.Controllers
         }
 
         [HttpPost]
-        public UpdateQuantidadeResponse UpdateQuantidade([FromBody]ItemPedido itemPedido)
+        public UpdateQuantidadeResponse UpdateQuantidade([FromBody] ItemPedido itemPedido)
         {
             return pedidoRepository.UpdateQuantidade(itemPedido);
         }
